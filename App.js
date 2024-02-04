@@ -1,3 +1,6 @@
+import React from "react";
+import ReactDOM from "react-dom/client"
+
 const head = React.createElement(
     "h1", 
     { id : "heading", rajat: "chandra"}, 
@@ -5,7 +8,7 @@ const head = React.createElement(
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-console.log(head) // object with props
+// console.log(head) // object with props
 
 root.render(head); // converts the object and puts it in the DOM
 
@@ -30,7 +33,7 @@ const parent = React.createElement(
     [React.createElement(
         "div",
         {id : "child1"},
-        [React.createElement("h1", {}, "I am an H1 tag"),
+        [React.createElement("h1", {}, "This is Namaste React"),
          React.createElement("h2",{},"I am an H2 tag")
         ]
     ),
@@ -44,6 +47,6 @@ const parent = React.createElement(
     ]
 )
 
-console.log(parent)
+//console.log(parent)
 
 root.render(parent)
