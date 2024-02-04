@@ -1,52 +1,48 @@
 import React from "react";
-import ReactDOM from "react-dom/client"
+import ReactDOM from "react-dom/client";
 
-const head = React.createElement(
-    "h1", 
-    { id : "heading", rajat: "chandra"}, 
-    "Hello World from React, using App.js");
+//React Element
+const heading = function (props) {
+  return (
+    <h1 id="heading" rajat="chandra" className="head">
+      Hello World from React JSX
+    </h1>
+  );
+};
+
+const name = "Rajat";
+const age = 25;
+const elem = <span>Nested too deep!</span>;
+const ReactElement = (
+  <div className="">
+    <p>React Element called inside HC</p>
+    {elem}
+  </div>
+);
+
+//React Functional Component => just a JavaScript function that returns JSX
+//Everything in React in a component
+
+const Title = () =>(
+  <div className="title" tabIndex="5">
+    <h2>Title called HC</h2>
+  </div>
+);
+const HeadingComponent = () => (
+  <div className="container">
+    {/* Component Compostion*/}
+    <Title />
+    {Title()}
+    <Title></Title>
+    <h1 className="heading">React Functional Component</h1>
+    <h2 className="heading">
+      {name}, {age - 1}
+    </h2>
+    {ReactElement}
+  </div>
+);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-// console.log(head) // object with props
-
-root.render(head); // converts the object and puts it in the DOM
-
-// Nested Elements
-/*
-    <div id="parent">
-        <div id="child1">
-            <h1>I am an H1 tag</h1>
-            <h1>I am an H2 tag</h1>
-        </div>
-        <div id="child2">
-            <h1>I am an H1 tag</h1>
-            <h1>I am an H2 tag</h1>
-        </div>
-    </div>
-*/
-
-const parent = React.createElement(
-    "div",
-    {id : "parent"},
-
-    [React.createElement(
-        "div",
-        {id : "child1"},
-        [React.createElement("h1", {}, "This is Namaste React"),
-         React.createElement("h2",{},"I am an H2 tag")
-        ]
-    ),
-    React.createElement(
-        "div",
-        {id : "child2"},
-        [React.createElement("h1", {}, "I am an H1 tag"),
-         React.createElement("h2",{},"I am an H2 tag")
-        ]
-    )
-    ]
-)
-
-//console.log(parent)
-
-root.render(parent)
+root.render(HeadingComponent());
+//root.render(<HeadingComponent />);

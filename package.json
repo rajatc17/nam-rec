@@ -2,9 +2,10 @@
   "name": "nam-rec",
   "version": "1.0.0",
   "description": "This is Namaste React learnings by Rajat",
-  "main": "App.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
   },
   "repository": {
     "type": "git",
@@ -24,5 +25,8 @@
   "dependencies": {
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
-  }
+  },
+  "browserslist": [
+    "last 2 version"
+  ]
 }
